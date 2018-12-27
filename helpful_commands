@@ -1,0 +1,3 @@
+#find and replace Nachos. in .txt files under grizzly/toma/ directory with Nachos()
+
+find grizzly/toma/ -name \*.txt -print0 | xargs -0 fgrep -r 'Nachos.' -l | xargs sed -i 's/\(Nachos\.[^(]*\)()/\1/g'
