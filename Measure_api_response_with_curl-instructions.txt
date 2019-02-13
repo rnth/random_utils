@@ -1,0 +1,17 @@
+Source: https://blog.josephscott.org/2011/10/14/timing-details-with-curl/
+
+Make a file:
+cat > curl-format.txt 
+
+ time_namelookup:  %{time_namelookup}\n
+       time_connect:  %{time_connect}\n
+    time_appconnect:  %{time_appconnect}\n
+   time_pretransfer:  %{time_pretransfer}\n
+      time_redirect:  %{time_redirect}\n
+ time_starttransfer:  %{time_starttransfer}\n
+                    ----------\n
+         time_total:  %{time_total}\n
+[Ctrl+c]
+
+run the command
+curl -w "@curl-format.txt" -s -u "TOKEN": https://host/api/nonsense
