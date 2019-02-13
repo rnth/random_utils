@@ -14,4 +14,4 @@ cat > curl-format.txt
 [Ctrl+c]
 
 run the command
-curl -w "@curl-format.txt" -s -u "TOKEN": https://host/api/nonsense
+curl -w "@curl-format.txt" -s -u "TOKEN": -o "response-dump" https://host/api/nonsense | grep -oP "(?<=time_total:)\s*(.+)" | xargs
