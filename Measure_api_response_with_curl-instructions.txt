@@ -1,5 +1,7 @@
 Source: https://blog.josephscott.org/2011/10/14/timing-details-with-curl/
 
+WITH THE HELP OF A DECORATIVE FILE AND MORE INFORMATION
+-------------------------------------------------------
 Make a file:
 cat > curl-format.txt 
 
@@ -15,3 +17,8 @@ cat > curl-format.txt
 
 run the command
 curl -w "@curl-format.txt" -s -u "TOKEN": -o "response-dump" https://host/api/nonsense | grep -oP "(?<=time_total:)\s*(.+)" | xargs
+
+
+WITHOUT THE HELP OF A DECORATIVE FILE AND CONCRETE TOTAL RESULT
+---------------------------------------------------------------
+curl -w "TOTAL:%{time_total}" -s -u "TOKEN": -o "response-dump-file" https://host/api/nonsense | grep -oP "(?<=TOTAL:).+"
