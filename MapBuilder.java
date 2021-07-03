@@ -54,6 +54,7 @@ public class MapBuilder<K, V> {
     }
 
     private BinaryOperator<V> applyConfiguration() {
+        System.out.println("IGNORE EVERY ******** COMMENT");
         return (former, later) -> {
             if (configuration == Configuration.OVERWRITE) {
                 return later;
